@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: backstage
+  name: adam test api to backstage
   description: |
-    Backstage is an open-source developer portal that puts the developer experience first.
+    Test repo by AdamFamily
   links:
     - title: Website
       url: http://backstage.io
@@ -14,9 +14,9 @@ metadata:
     - title: Discord Chat
       url: https://discord.com/invite/EBHEGzX
   annotations:
-    github.com/project-slug: backstage/backstage
+    github.com/project-slug: AdamFamily/Test-SW-Catalog---API
     backstage.io/techdocs-ref: dir:.
-    lighthouse.com/website-url: https://backstage.io
+    lighthouse.com/website-url: https://samaair.com
 spec:
   type: library
   owner: guests
