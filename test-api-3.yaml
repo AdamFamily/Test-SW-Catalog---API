@@ -7,7 +7,7 @@ spec:
   type: openapi
   lifecycle: develop
   owner: guests
-  system: example
+  system: examples
   definition: |
     openapi: "3.0.0"
     info:
