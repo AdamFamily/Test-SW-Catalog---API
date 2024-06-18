@@ -3,7 +3,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: apiV7
+  name: apiV7-system
 spec:
   owner: adamfamily
 ---
@@ -11,7 +11,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: api7-website
+  name: api7-website-component
   annotations:
     endoflife.date/products: nginx,Spring Boot,Node.js
 spec:
@@ -27,8 +27,9 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: apiV7
+  description: API V7 Description
 spec:
-  type: grpc
+  type: REST
   lifecycle: develop
   owner: adamfamily
   system: apiV7
