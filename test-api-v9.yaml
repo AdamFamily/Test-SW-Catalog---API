@@ -6,7 +6,7 @@ metadata:
   name: apiV9-system
   description: V9 API Description
 spec:
-  owner: guest
+  owner: guests
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
 apiVersion: backstage.io/v1alpha1
@@ -18,7 +18,7 @@ metadata:
 spec:
   type: website
   lifecycle: experimental
-  owner: guest
+  owner: guests
   system: apiV9
   providesApis: [apiV9]
   consumesApis: 
@@ -34,7 +34,7 @@ metadata:
 spec:
   type: REST
   lifecycle: develop
-  owner: guest
+  owner: guests
   system: apiV9
   definition: |
     syntax = "proto3";
