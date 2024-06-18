@@ -23,6 +23,7 @@ spec:
   providesApis: [apiV8]
   consumesApis: 
     - apiV5
+    - apiV8
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
 apiVersion: backstage.io/v1alpha1
