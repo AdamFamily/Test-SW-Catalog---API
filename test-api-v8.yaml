@@ -1,0 +1,47 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: apiV8-system
+  description: API V.8 Description 
+spec:
+  owner: adamfamily
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: apiV8-website-component
+  annotations:
+    endoflife.date/products: nginx,Spring Boot,Node.js
+spec:
+  type: website
+  lifecycle: experimental
+  owner: adamfamily
+  system: apiV8
+  providesApis: [apiV8]
+  consumesApis: 
+    - apiV5
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: apiV8
+  description: API V8 Description
+spec:
+  type: REST
+  lifecycle: develop
+  owner: adamfamily
+  system: apiV8
+  definition: |
+    syntax = "proto3";
+
+    service Exampler {
+      rpc Example (ExampleMessage) returns (ExampleMessage) {};
+    }
+
+    message ExampleMessage {
+      string example = 1;
+    };
