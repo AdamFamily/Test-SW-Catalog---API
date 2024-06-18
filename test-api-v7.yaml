@@ -43,4 +43,3 @@ spec:
     message ExampleMessage {
       string example = 1;
     };
-  consumesApis: [examples]
