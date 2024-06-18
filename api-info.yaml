@@ -1,23 +1,23 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
-  name: adam test api to backstage
-  description: |
-    Test repo by AdamFamily
-  links:
-    - title: Website
-      url: http://backstage.io
-    - title: Documentation
-      url: https://backstage.io/docs
-    - title: Storybook
-      url: https://backstage.io/storybook
-    - title: Discord Chat
-      url: https://discord.com/invite/EBHEGzX
-  annotations:
-    github.com/project-slug: AdamFamily/Test-SW-Catalog---API
-    backstage.io/techdocs-ref: dir:.
-    lighthouse.com/website-url: https://samaair.com
+  name: artist-api
+  description: Retrieve artist details
 spec:
-  type: library
-  owner: guests
-  lifecycle: experimental
+  type: openapi
+  lifecycle: production
+  owner: artist-relations-team
+  system: artist-engagement-portal
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Artist API
+      license:
+        name: MIT
+    servers:
+      - url: http://artist.spotify.net/v1
+    paths:
+      /artists:
+        get:
+          summary: List all artists
