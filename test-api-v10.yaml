@@ -4,7 +4,7 @@ apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
   name: apiV10-system
-  description: V9 API Description
+  description: V10 API Description
 spec:
   owner: guests
 ---
