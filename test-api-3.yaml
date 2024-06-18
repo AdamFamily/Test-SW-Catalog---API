@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: test-api-3
+  description: Retrieve test api 3
+spec:
+  type: openapi
+  lifecycle: develop
+  owner: guests
+  system: example
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Test API 3
+    servers:
+      - url: http://artist.spotify.net/v1
+    paths:
+      /artists:
+        get:
+          summary: List all artists
