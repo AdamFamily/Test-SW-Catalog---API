@@ -1,0 +1,45 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: apiV5
+spec:
+  owner: adamfamily
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: apiV5-website
+  annotations:
+    endoflife.date/products: nginx,Spring Boot,Node.js
+spec:
+  type: website
+  lifecycle: experimental
+  owner: adamfamily
+  system: apiV5
+  providesApis: [apiV5]
+  consumersApis: [examples]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: apiV5
+spec:
+  type: grpc
+  lifecycle: develop
+  owner: adamfamily
+  system: apiV5
+  definition: |
+    syntax = "proto3";
+
+    service Exampler {
+      rpc Example (ExampleMessage) returns (ExampleMessage) {};
+    }
+
+    message ExampleMessage {
+      string example = 1;
+    };
+  consumersApis: [examples]
